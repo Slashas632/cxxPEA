@@ -34,4 +34,4 @@ DerivedData/
 
 gui/imgui/examples/
 gui/imgui/docs/
-
+gui/imgui/** linguist-vendored
