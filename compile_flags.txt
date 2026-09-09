@@ -1,4 +1,5 @@
 -std=c++17
--I./imgui
--I./imgui/backends
+-I./gui/
+-I./gui/imgui
+-I./gui/imgui/backends
 -I/usr/include/SDL2
