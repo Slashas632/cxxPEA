@@ -11,10 +11,15 @@ Build system: Makefile
 
 # Code format
 Indent: 2
+
 Column limit: 80
+
 Left pointer alignment
 
 Naming:
+
 Variables snake_case
+
 Functions: PascalCase
+
 Macro's: SCREAMING_SNAKE_CASE
