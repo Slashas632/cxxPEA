@@ -7,4 +7,4 @@ C++ Version: c++17
 
 Compiler version: clang version 22.1.8
 
-Build system: Makefile1
+Build system: Makefile
