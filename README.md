@@ -1,9 +1,9 @@
 # cxxPEA
-Name: Emilijus
-OS: Linux / MacOS
-C++ Version: C++17
-Compiler version: clang version 22.1.8
-Build system: Makefile
+- Name: Emilijus
+- OS: Linux / MacOS
+- C++ Version: C++17
+- Compiler version: clang version 22.1.8
+- Build system: Makefile
 
 # Code format
 - Indent: 2
@@ -14,5 +14,5 @@ Build system: Makefile
 
 - Variables: `snake_case`
 - Functions: `PascalCase`
-- Classes: 'PascalCase'
+- Classes: `PascalCase`
 - Macro's: `SCREAMING_SNAKE_CASE`
