@@ -1,4 +1,40 @@
 .clangd
 .clang-format
+
+# Build artifacts
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.dll
 *.exe
-cxxPEA
+
+# Build directories
+build/
+cmake-build-*/
+
+# Compilation database
+compile_commands.json
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode
+DerivedData/
+*.xcuserstate
+*.xcworkspace/
+*.xcodeproj/
+
+# IDEs
+.vscode/
+.idea/
+
+# Debugging
+*.dSYM/
+
+gui/imgui/examples/
+gui/imgui/docs/
+
