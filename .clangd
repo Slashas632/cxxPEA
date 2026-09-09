@@ -1,0 +1,23 @@
+# .clangd
+Diagnostics:
+  ClangTidy:
+    Add:
+      - 'bugprone-*'
+
+      # Modernus C++
+      - 'modernize-use-nullptr'
+      - 'modernize-use-auto'
+      - 'modernize-loop-convert'
+      - 'modernize-use-override'
+
+      # Performance check'as
+      - 'performance-for-range-copy'
+      - 'performance-avoid-endl'
+      - 'performance-faster-string-find'
+
+      # Saugumo check'as
+      - 'clang-analyzer-security.*'
+      - 'clang-analyzer-core.NullDereference'
+
+      # readability
+      - 'readability-isolate-declaration'
