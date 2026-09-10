@@ -18,6 +18,7 @@
 - Macro's: `SCREAMING_SNAKE_CASE`
 
 ## Project tree
+```
  .
 ├──  compile_flags.txt
 ├── 󰡯 cxxPEA
@@ -47,3 +48,4 @@
 ├──  Makefile
 ├── 󰂺 README.md
 └── 󰒃 SECURITY.md
+```
