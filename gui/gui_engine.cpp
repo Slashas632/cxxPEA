@@ -1,6 +1,3 @@
-#include <iostream>
-
-// ImGui include'ai
 #include <SDL.h>
 #include <SDL_opengl.h>
 
@@ -11,17 +8,17 @@
 
 int main_window() {
   const char* main_window_name = "Main Window - cxxPEA";
-  int plotis;
-  int aukstis;
+  int width;
+  int height;
 
-  plotis = 1280;
-  aukstis = 720;
+  width = 1280;
+  height = 720;
 
   SDL_Init(SDL_INIT_VIDEO);
 
   SDL_Window* langas = SDL_CreateWindow(
-      main_window_name, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, plotis,
-      aukstis, SDL_WINDOW_OPENGL);
+      main_window_name, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width,
+      height, SDL_WINDOW_OPENGL);
 
   SDL_GLContext context = SDL_GL_CreateContext(langas);
 
@@ -34,11 +31,10 @@ int main_window() {
   ImGui_ImplSDL2_InitForOpenGL(langas, context);
   ImGui_ImplOpenGL2_Init();
 
-  // sukurtas loop kad langas neuzsidarytu iskart po pasileidimo
-  // visad veikiantis kol programa run'nina
+  // always running loop to refresh user interface
   while (true) {
     SDL_Event event;
-    // Tikrina ar vartotojas atliko veiksma
+    // always checks for any user input
     while (SDL_PollEvent(&event)) {
       ImGui_ImplSDL2_ProcessEvent(&event);
       if (event.type == SDL_QUIT) return 0;
@@ -53,7 +49,7 @@ int main_window() {
     ImGui::SetNextWindowSize(io.DisplaySize);
     ImGui::Begin("Window");
 
-    // cia rasomas pagrindis kodas kas vyksta languose
+    // code for main window
 
     ImGui::End();
     ImGui::Render();
