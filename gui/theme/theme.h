@@ -37,6 +37,6 @@ enum class ThemeType {
 
 void ApplyTheme(ImGuiStyle& style, const Theme* t);
 
-extern const Theme dark_theme;
+extern const Theme green_theme;
 
 extern const Theme* current_theme;

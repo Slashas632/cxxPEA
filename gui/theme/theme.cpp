@@ -1,6 +1,6 @@
 #include "theme.h"
 
-const Theme dark_theme{.background = {0.10f, 0.10f, 0.12f, 1.0f},
+const Theme green_theme{.background = {0.10f, 0.10f, 0.12f, 1.0f},
                        .surface = {0.14f, 0.14f, 0.17f, 1.0f},
 
                        .text = {0.90f, 0.90f, 0.92f, 1.0f},

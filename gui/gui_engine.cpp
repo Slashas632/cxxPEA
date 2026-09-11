@@ -30,7 +30,7 @@ int main_window() {
   ImGui::CreateContext();
 
   ImGuiStyle& style = ImGui::GetStyle();
-  ApplyTheme(style, &dark_theme);
+  ApplyTheme(style, &green_theme);
 
   ImGui_ImplSDL2_InitForOpenGL(langas, context);
   ImGui_ImplOpenGL2_Init();
