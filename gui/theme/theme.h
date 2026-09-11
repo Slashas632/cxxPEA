@@ -1,34 +1,31 @@
 #pragma once
 
 #include "imgui.h"
+#include <GL/gl.h>
 
 struct Color {
+  float r;
+  float g;
+  float b;
+  float a;
 
-    float r;
-    float g;
-    float b;
-    float a;
+  ImVec4 imgui() const { return ImVec4(r, b, g, a); }
 
-    ImVec4 imgui() const { return ImVec4(r, b, g, a); }
-
-    void apply() const {
-        glClearColor(r,g,b,a);
-    }
+  void apply() const { glClearColor(r, g, b, a); }
 };
 
 struct Theme {
+  Color background;
+  Color surface;
+  Color text;
+  Color text_disabled;
 
-    Color background;
-    Color surface;
-    Color text;
-    Color text_disabled;
+  Color accent;
+  Color accent_light;
 
-    Color accent;
-    Color accent_light;
-
-    Color success;
-    Color warning;
-    Color error;
+  Color success;
+  Color warning;
+  Color error;
 };
 
 enum class ThemeType {
@@ -38,8 +35,8 @@ enum class ThemeType {
   White
 };
 
+void ApplyTheme(ImGuiStyle& style, const Theme* t);
+
 extern const Theme dark_theme;
-extern const Theme gray_theme;
-extern const Theme white_theme;
 
 extern const Theme* current_theme;

@@ -7,6 +7,7 @@
 #include "imgui.h"
 #include "imgui_impl_opengl2.h"
 #include "imgui_impl_sdl2.h"
+#include "theme.h"
 
 int main_window() {
   const char* main_window_name = "Main Window - cxxPEA";
@@ -26,6 +27,9 @@ int main_window() {
 
   IMGUI_CHECKVERSION();
   ImGui::CreateContext();
+  ImGuiStyle& style = ImGui::GetStyle();
+
+  ApplyTheme(style, &dark_theme);
 
   ImGui_ImplSDL2_InitForOpenGL(langas, context);
   ImGui_ImplOpenGL2_Init();
@@ -54,7 +58,6 @@ int main_window() {
     ImGui::End();
     ImGui::Render();
 
-    glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
     ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
