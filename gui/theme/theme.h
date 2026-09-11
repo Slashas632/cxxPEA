@@ -1,1 +1,45 @@
 #pragma once
+
+#include "imgui.h"
+
+struct Color {
+
+    float r;
+    float g;
+    float b;
+    float a;
+
+    ImVec4 imgui() const { return ImVec4(r, b, g, a); }
+
+    void apply() const {
+        glClearColor(r,g,b,a);
+    }
+};
+
+struct Theme {
+
+    Color background;
+    Color surface;
+    Color text;
+    Color text_disabled;
+
+    Color accent;
+    Color accent_light;
+
+    Color success;
+    Color warning;
+    Color error;
+};
+
+enum class ThemeType {
+
+  Dark,
+  Gray,
+  White
+};
+
+extern const Theme dark_theme;
+extern const Theme gray_theme;
+extern const Theme white_theme;
+
+extern const Theme* current_theme;
