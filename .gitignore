@@ -6,6 +6,7 @@
 *.dylib
 *.dll
 *.exe
+*.ini
 
 # Build directories
 build/
