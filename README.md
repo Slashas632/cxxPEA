@@ -19,7 +19,9 @@
 
 ## Project tree
 
-```text
+
+```
+cxxPEA
 ├── compile_flags.txt
 ├── cxxPEA
 ├── gui
@@ -49,4 +51,3 @@
 ├── README.md
 └── SECURITY.md
 ```
-
