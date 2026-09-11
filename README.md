@@ -1,5 +1,4 @@
 # cxxPEA
-- Name: Emilijus
 - OS: Linux / MacOS
 - C++ Version: C++17
 - Compiler version: clang version 22.1.8
