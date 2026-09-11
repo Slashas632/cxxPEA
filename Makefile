@@ -3,6 +3,7 @@ CXXVERSION= -std=c++17
 
 SRC = main.cpp \
 	gui/gui_engine.cpp \
+	gui/mainbar/mainbar.cpp \
 	gui/theme/theme.cpp \
 	gui/imgui/imgui.cpp \
 	gui/imgui/imgui_demo.cpp \
@@ -12,6 +13,7 @@ SRC = main.cpp \
 	gui/imgui/backends/imgui_impl_sdl2.cpp \
 	gui/imgui/backends/imgui_impl_opengl2.cpp
 HEADERS = -I./gui \
+	-I./gui/mainbar \
 	-I./gui/imgui \
 	-I./gui/theme \
 	-I./gui/imgui/backends \

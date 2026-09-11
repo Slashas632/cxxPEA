@@ -1,5 +1,6 @@
 -std=c++17
 -I./gui/
+-I./gui/mainbar
 -I./gui/theme
 -I./gui/imgui
 -I./gui/imgui/backends

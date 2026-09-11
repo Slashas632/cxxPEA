@@ -4,12 +4,16 @@
 #include "imgui.h"
 #include "imgui_impl_opengl2.h"
 #include "imgui_impl_sdl2.h"
+#include "mainbar.h"
 #include "theme.h"
 
 int main_window() {
   const char* main_window_name = "Main Window - cxxPEA";
   int width;
   int height;
+
+  bool program_loop = true;
+  bool* p_program_loop = &program_loop;
 
   width = 1280;
   height = 720;
@@ -24,15 +28,15 @@ int main_window() {
 
   IMGUI_CHECKVERSION();
   ImGui::CreateContext();
-  ImGuiStyle& style = ImGui::GetStyle();
 
+  ImGuiStyle& style = ImGui::GetStyle();
   ApplyTheme(style, &dark_theme);
 
   ImGui_ImplSDL2_InitForOpenGL(langas, context);
   ImGui_ImplOpenGL2_Init();
 
   // always running loop to refresh user interface
-  while (true) {
+  while (*p_program_loop) {
     SDL_Event event;
     // always checks for any user input
     while (SDL_PollEvent(&event)) {
@@ -42,14 +46,23 @@ int main_window() {
 
     ImGui_ImplOpenGL2_NewFrame();
     ImGui_ImplSDL2_NewFrame();
-
     ImGui::NewFrame();
-    ImGuiIO& io = ImGui::GetIO();
-    ImGui::SetNextWindowPos({0, 0});
-    ImGui::SetNextWindowSize(io.DisplaySize);
-    ImGui::Begin("Window");
 
-    // code for main window
+    ImGuiIO& io = ImGui::GetIO();
+
+    // ImGui::SetNextWindowPos({0, 0});
+    // ImGui::SetNextWindowSize(io.DisplaySize);
+
+    ImGui::SetNextWindowPos(ImVec2(0, ImGui::GetFrameHeight()));
+    ImGui::SetNextWindowSize(
+        ImVec2(io.DisplaySize.x, io.DisplaySize.y - ImGui::GetFrameHeight()));
+
+    // ImGui::Begin("##Hello");
+    ImGui::Begin("##MainWindow", nullptr,
+                 ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize |
+                     ImGuiWindowFlags_NoMove);
+
+    MainBar(p_program_loop);
 
     ImGui::End();
     ImGui::Render();
