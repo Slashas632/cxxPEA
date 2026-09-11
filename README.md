@@ -48,7 +48,6 @@ cxxPEA
 │   └── theme
 │       ├── theme.cpp
 │       └── theme.h
-├── imgui.ini
 ├── LICENSE
 ├── main.cpp
 ├── Makefile
