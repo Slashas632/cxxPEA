@@ -12,8 +12,9 @@ int main_window() {
   int width;
   int height;
 
-  bool program_loop = true;
-  bool* p_program_loop = &program_loop;
+  Options menu_bar_options;
+
+  menu_bar_options.filebar.program_loop = true;
 
   width = 1280;
   height = 720;
@@ -36,7 +37,7 @@ int main_window() {
   ImGui_ImplOpenGL2_Init();
 
   // always running loop to refresh user interface
-  while (*p_program_loop) {
+  while (menu_bar_options.filebar.program_loop) {
     SDL_Event event;
     // always checks for any user input
     while (SDL_PollEvent(&event)) {
@@ -62,7 +63,7 @@ int main_window() {
                  ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize |
                      ImGuiWindowFlags_NoMove);
 
-    MainBar(p_program_loop);
+    MainBar(menu_bar_options);
 
     ImGui::End();
     ImGui::Render();

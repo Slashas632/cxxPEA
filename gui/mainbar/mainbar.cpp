@@ -2,14 +2,17 @@
 
 #include "imgui.h"
 
-void MainBar(bool* p_program_loop) {
+
+void file_bar(Options::file_bar& filebar) {
   if (ImGui::BeginMainMenuBar()) {
     if (ImGui::BeginMenu("File")) {
       if (ImGui::MenuItem("Exit")) {
-        *p_program_loop = false;
+        filebar.program_loop = false;
       }
       ImGui::EndMenu();
     }
     ImGui::EndMainMenuBar();
   }
 }
+
+void MainBar(Options& options) { file_bar(options.filebar); }
