@@ -41,5 +41,7 @@ void ApplyTheme(ImGuiStyle& style, const Theme* t);
 Color HexToColor(uint32_t hex);
 
 extern const Theme green_theme;
+extern const Theme cherryred_theme;
+
 
 extern const Theme* current_theme;
