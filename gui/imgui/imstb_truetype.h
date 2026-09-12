@@ -3746,8 +3746,12 @@ STBTT_DEF unsigned char *stbtt_GetGlyphBitmapSubpixel(const stbtt_fontinfo *info
    if (xoff  ) *xoff   = ix0;
    if (yoff  ) *yoff   = iy0;
 
-   if (gbm.w && gbm.h) {
-      gbm.pixels = (unsigned char *) STBTT_malloc(gbm.w * gbm.h, info->userdata);
+   if (gbm.w > 0 && gbm.h > 0) {
+      size_t pixel_count = (size_t) gbm.w;
+      if (pixel_count <= ((size_t) -1) / (size_t) gbm.h) {
+         pixel_count *= (size_t) gbm.h;
+         gbm.pixels = (unsigned char *) STBTT_malloc(pixel_count, info->userdata);
+      }
       if (gbm.pixels) {
          gbm.stride = gbm.w;
 
