@@ -9,7 +9,7 @@ struct Color {
   float b;
   float a;
 
-  ImVec4 imgui() const { return ImVec4(r, b, g, a); }
+  ImVec4 imgui() const { return ImVec4(r, g, b, a); }
 
   void apply() const { glClearColor(r, g, b, a); }
 };
@@ -36,6 +36,8 @@ enum class ThemeType {
 };
 
 void ApplyTheme(ImGuiStyle& style, const Theme* t);
+
+Color HexToColor(uint32_t hex);
 
 extern const Theme green_theme;
 
