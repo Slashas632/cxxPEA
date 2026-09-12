@@ -3993,7 +3993,7 @@ STBTT_DEF int stbtt_PackBegin(stbtt_pack_context *spc, unsigned char *pixels, in
    stbrp_init_target(context, pw-padding, ph-padding, nodes, num_nodes);
 
    if (pixels)
-      STBTT_memset(pixels, 0, pw*ph); // background of 0 around pixels
+      STBTT_memset(pixels, 0, (size_t) pw * (size_t) ph); // background of 0 around pixels
 
    return 1;
 }
