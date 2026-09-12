@@ -2,7 +2,6 @@
 
 #include "imgui.h"
 
-
 void file_bar(Options::file_bar& filebar) {
   if (ImGui::BeginMainMenuBar()) {
     if (ImGui::BeginMenu("File")) {

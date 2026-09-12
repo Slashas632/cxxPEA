@@ -51,14 +51,10 @@ int main_window() {
 
     ImGuiIO& io = ImGui::GetIO();
 
-    // ImGui::SetNextWindowPos({0, 0});
-    // ImGui::SetNextWindowSize(io.DisplaySize);
-
     ImGui::SetNextWindowPos(ImVec2(0, ImGui::GetFrameHeight()));
     ImGui::SetNextWindowSize(
         ImVec2(io.DisplaySize.x, io.DisplaySize.y - ImGui::GetFrameHeight()));
 
-    // ImGui::Begin("##Hello");
     ImGui::Begin("##MainWindow", nullptr,
                  ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize |
                      ImGuiWindowFlags_NoMove);
