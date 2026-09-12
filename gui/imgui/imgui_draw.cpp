@@ -2509,9 +2509,11 @@ void ImTextureData::Create(ImTextureFormat format, int w, int h)
     Height = h;
     BytesPerPixel = ImTextureDataGetFormatBytesPerPixel(format);
     UseColors = false;
-    Pixels = (unsigned char*)IM_ALLOC(Width * Height * BytesPerPixel);
+    const size_t pixel_count = (size_t)Width * (size_t)Height;
+    const size_t alloc_size = pixel_count * (size_t)BytesPerPixel;
+    Pixels = (unsigned char*)IM_ALLOC(alloc_size);
     IM_ASSERT(Pixels != NULL);
-    memset(Pixels, 0, Width * Height * BytesPerPixel);
+    memset(Pixels, 0, alloc_size);
     UsedRect.x = UsedRect.y = UsedRect.w = UsedRect.h = 0;
     UpdateRect.x = UpdateRect.y = (unsigned short)~0;
     UpdateRect.w = UpdateRect.h = 0;
