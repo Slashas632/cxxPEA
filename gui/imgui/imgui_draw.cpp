@@ -4836,9 +4836,10 @@ static bool ImGui_ImplStbTrueType_FontBakedLoadGlyph(ImFontAtlas* atlas, ImFontC
         // Render
         stbtt_GetGlyphBitmapBox(&bd_font_data->FontInfo, glyph_index, scale_for_raster_x, scale_for_raster_y, &x0, &y0, &x1, &y1);
         ImFontAtlasBuilder* builder = atlas->Builder;
-        builder->TempBuffer.resize(w * h * 1);
+        const size_t bitmap_size = (size_t)w * (size_t)h;
+        builder->TempBuffer.resize(bitmap_size);
         unsigned char* bitmap_pixels = builder->TempBuffer.Data;
-        memset(bitmap_pixels, 0, w * h * 1);
+        memset(bitmap_pixels, 0, bitmap_size);
 
         // Render with oversampling
         // (those functions conveniently assert if pixels are not cleared, which is another safety layer)
