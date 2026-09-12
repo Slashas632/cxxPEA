@@ -3004,7 +3004,7 @@ void ImFontAtlasTextureBlockCopy(ImTextureData* src_tex, int src_x, int src_y, I
     IM_ASSERT(dst_x >= 0 && dst_x + w <= dst_tex->Width);
     IM_ASSERT(dst_y >= 0 && dst_y + h <= dst_tex->Height);
     for (int y = 0; y < h; y++)
-        memcpy(dst_tex->GetPixelsAt(dst_x, dst_y + y), src_tex->GetPixelsAt(src_x, src_y + y), w * dst_tex->BytesPerPixel);
+        memcpy(dst_tex->GetPixelsAt(dst_x, dst_y + y), src_tex->GetPixelsAt(src_x, src_y + y), (size_t)w * (size_t)dst_tex->BytesPerPixel);
 }
 
 void ImFontAtlasTextureBlockQueueUpload(ImFontAtlas* atlas, ImTextureData* tex, int x, int y, int w, int h)
