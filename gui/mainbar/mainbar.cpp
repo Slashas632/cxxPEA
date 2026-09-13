@@ -14,4 +14,12 @@ void file_bar(Options::file_bar& filebar) {
   }
 }
 
+void settings_bar() {
+  if (ImGui::BeginMainMenuBar()) {
+    if (ImGui::BeginMenu("Settings")) {
+    }
+  }
+  ImGui::EndMainMenuBar();
+}
+
 void MainBar(Options& options) { file_bar(options.filebar); }
