@@ -22,4 +22,7 @@ void settings_bar() {
   ImGui::EndMainMenuBar();
 }
 
-void MainBar(Options& options) { file_bar(options.filebar); }
+void MainBar(Options& options) {
+  file_bar(options.filebar);
+  settings_bar();
+}
