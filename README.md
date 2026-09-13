@@ -22,7 +22,6 @@
 ```
 cxxPEA
 ├── compile_flags.txt
-├── cxxPEA
 ├── gui
 │   ├── gui_engine.cpp
 │   ├── gui_engine.h
@@ -44,6 +43,9 @@ cxxPEA
 │   │   ├── imstb_textedit.h
 │   │   ├── imstb_truetype.h
 │   │   └── LICENSE.txt
+│   ├── mainbar
+│   │   ├── mainbar.cpp
+│   │   └── mainbar.h
 │   └── theme
 │       ├── theme.cpp
 │       └── theme.h
