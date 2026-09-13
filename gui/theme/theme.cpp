@@ -24,18 +24,17 @@ const Theme green_theme{.background = HEX(0x1A1A1F),
                         .error = HEX(0xE64040)};
 
 const Theme cherryred_theme{.background = HEX(0x1A1A1F),
-                        .surface = HEX(0x24242B),
+                            .surface = HEX(0x24242B),
 
-                        .text = HEX(0xE6E6EB),
-                        .text_disabled = HEX(0xA00323),
+                            .text = HEX(0xE6E6EB),
+                            .text_disabled = HEX(0xA00323),
 
-                        .accent = HEX(0x730219),
-                        .accent_light = HEX(0xA00323),
+                            .accent = HEX(0x730219),
+                            .accent_light = HEX(0xA00323),
 
-                        .success = HEX(0x33BF66),
-                        .warning = HEX(0xF2A633),
-                        .error = HEX(0xE64040)};
-
+                            .success = HEX(0x33BF66),
+                            .warning = HEX(0xF2A633),
+                            .error = HEX(0xE64040)};
 
 void ApplyTheme(ImGuiStyle& style, const Theme* t) {
   style.Colors[ImGuiCol_WindowBg] = t->background.imgui();
