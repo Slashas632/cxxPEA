@@ -1,42 +1,11 @@
 #include <SDL.h>
 #include <SDL_opengl.h>
-#include <string>
-#include <iostream>
 
 #include "imgui.h"
 #include "imgui_impl_opengl2.h"
 #include "imgui_impl_sdl2.h"
 #include "mainbar.h"
 #include "theme.h"
-
-#include "tinyfiledialogs/tinyfiledialogs.h"
-
-void TestFileDialog()
-{
-    if (ImGui::Button("Open File"))
-    {
-        const char* path = tinyfd_openFileDialog(
-            "Choose a file",
-            "",
-            0,
-            nullptr,
-            nullptr,
-            0
-        );
-
-        if (path != nullptr)
-        {
-            std::string filePath = path;
-
-            std::cout << "Selected file: " << filePath << std::endl;
-        }
-        else
-        {
-            std::cout << "No file selected." << std::endl;
-        }
-    }
-}
-
 
 int main_window() {
   const char* main_window_name = "Main Window - cxxPEA";
@@ -91,7 +60,6 @@ int main_window() {
                      ImGuiWindowFlags_NoMove);
 
     MainBar(menu_bar_options);
-    TestFileDialog();
 
     ImGui::End();
     ImGui::Render();
