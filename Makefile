@@ -23,3 +23,6 @@ TARGET = cxxPEA
 
 run:
 	$(CXX) $(CXXVERSION) $(HEADERS) $(SRC) -o $(TARGET) $(LDFFLAGS)
+
+clean:
+	rm -rf $(TARGET) imgui.ini
