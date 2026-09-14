@@ -5,3 +5,4 @@
 -I./gui/imgui
 -I./gui/imgui/backends
 -I/usr/include/SDL2
+-I/gui/tinyfilesdialogs

@@ -11,12 +11,14 @@ SRC = main.cpp \
 	gui/imgui/imgui_tables.cpp \
 	gui/imgui/imgui_widgets.cpp \
 	gui/imgui/backends/imgui_impl_sdl2.cpp \
-	gui/imgui/backends/imgui_impl_opengl2.cpp
+	gui/imgui/backends/imgui_impl_opengl2.cpp \
+	gui/tinyfiledialogs/tinyfiledialogs.c
 HEADERS = -I./gui \
 	-I./gui/mainbar \
 	-I./gui/imgui \
 	-I./gui/theme \
 	-I./gui/imgui/backends \
+	-I./gui/tinyfilesdialogs \
 	$(shell pkg-config --cflags sdl2)
 LDFFLAGS = $(shell pkg-config --libs sdl2) -lGL
 TARGET = cxxPEA
