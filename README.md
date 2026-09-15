@@ -43,6 +43,12 @@ cxxPEA
 │   │   ├── imstb_textedit.h
 │   │   ├── imstb_truetype.h
 │   │   └── LICENSE.txt
+│   ├── imgui_file_dialog
+│   │   ├── file_dialog.cpp
+│   │   ├── file_dialog.h
+│   │   ├── ImGuiFileDialog.cpp
+│   │   ├── ImGuiFileDialog.h
+│   │   └── ImGuiFileDialogConfig.h
 │   ├── mainbar
 │   │   ├── mainbar.cpp
 │   │   └── mainbar.h
