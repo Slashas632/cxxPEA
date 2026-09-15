@@ -18,7 +18,7 @@ HEADERS = -I./gui \
 	-I./gui/imgui \
 	-I./gui/theme \
 	-I./gui/imgui/backends \
-	-I./gui/imgui_file_dialog \ 
+	-I./gui/imgui_file_dialog \
 	$(shell pkg-config --cflags sdl2)
 LDFFLAGS = $(shell pkg-config --libs sdl2) -lGL
 TARGET = cxxPEA
@@ -28,3 +28,5 @@ run:
 
 clean:
 	rm -rf $(TARGET) imgui.ini
+debug:
+	$(CXX) $(CXXVERSION) -g -O0 -Wall -Wextra $(HEADERS) $(SRC) -o $(TARGET) $(LDFFLAGS)
