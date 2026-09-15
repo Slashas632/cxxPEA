@@ -1,13 +1,14 @@
 #include <SDL.h>
 #include <SDL_opengl.h>
+
 #include <iostream>
 #include <string>
 
+#include "ImGuiFileDialog.h"
+#include "file_dialog.h"
 #include "imgui.h"
 #include "imgui_impl_opengl2.h"
 #include "imgui_impl_sdl2.h"
-#include "ImGuiFileDialog.h"
-
 #include "mainbar.h"
 #include "theme.h"
 
@@ -17,6 +18,7 @@ int main_window() {
   int height;
 
   Options menu_bar_options;
+  settings_filedialog filedialog_settings;
 
   menu_bar_options.filebar.program_loop = true;
 
@@ -64,28 +66,10 @@ int main_window() {
                      ImGuiWindowFlags_NoMove);
 
     MainBar(menu_bar_options);
-
-    if (ImGui::Button("Testing file dialog")) {
-      IGFD::FileDialogConfig config;
-      config.path = ".";
-
-      ImGuiFileDialog::Instance()->OpenDialog(
-        "FileDialog",
-        "Choose file",
-        ".cpp, .h, .hpp",
-        config
-      );
-    }
+    filedialog_button(filedialog_settings);
     ImGui::End();
 
-    if (ImGuiFileDialog::Instance()->Display("ChooseFileDlgKey")) {
-      if (ImGuiFileDialog::Instance()->IsOk()){
-        std::string filePath = ImGuiFileDialog::Instance()->GetFilePathName();
-
-        std::cout << "selected file: " << filePath << "\n";
-      }
-      ImGuiFileDialog::Instance()->Close();
-    }
+    filedialog_instance(filedialog_settings);
 
     ImGui::Render();
 
