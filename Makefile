@@ -12,7 +12,7 @@ SRC = main.cpp \
 	gui/imgui/imgui_widgets.cpp \
 	gui/imgui/backends/imgui_impl_sdl2.cpp \
 	gui/imgui/backends/imgui_impl_opengl2.cpp \
-	gui/imgui_file_dialog \
+	gui/imgui_file_dialog/ImGuiFileDialog.cpp \
 HEADERS = -I./gui \
 	-I./gui/mainbar \
 	-I./gui/imgui \
