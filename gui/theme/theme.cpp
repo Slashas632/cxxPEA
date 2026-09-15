@@ -66,4 +66,12 @@ void ApplyTheme(ImGuiStyle& style, const Theme* t) {
   style.Colors[ImGuiCol_DragDropTarget] = t->warning.imgui();
 
   style.Colors[ImGuiCol_TextSelectedBg] = t->accent.imgui();
+
+  style.Colors[ImGuiCol_TitleBg] = t->surface.imgui();
+  style.Colors[ImGuiCol_TitleBgActive] = t->accent.imgui();
+  style.Colors[ImGuiCol_TitleBgCollapsed] = t->background.imgui();
+
+  style.Colors[ImGuiCol_TableHeaderBg] = t->surface.imgui();
+  style.Colors[ImGuiCol_TableBorderStrong] = t->accent.imgui();
+  style.Colors[ImGuiCol_TableBorderLight] = t->surface.imgui();
 }
