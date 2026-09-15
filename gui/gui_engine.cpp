@@ -4,6 +4,8 @@
 #include "imgui.h"
 #include "imgui_impl_opengl2.h"
 #include "imgui_impl_sdl2.h"
+#include "ImGuiFileDialog.h"
+
 #include "mainbar.h"
 #include "theme.h"
 
@@ -61,7 +63,28 @@ int main_window() {
 
     MainBar(menu_bar_options);
 
+    if (ImGui::Button("Testing file dialog")) {
+      IGFD::FileDialogConfig config;
+      config.path = ".";
+
+      ImGuiFileDialog::Instance()->OpenDialog(
+        "FileDialog",
+        "Choose file",
+        ".cpp, .h, .hpp",
+        config
+      );
+    }
     ImGui::End();
+
+    if (ImGuiFileDialog::Instance()->Display("ChooseFileDlgKey")) {
+      if (ImGuiFileDialog::Instance()->IsOk()){
+        std::string filePath = ImGuiFileDialog::Instance()->GetFilePathName();
+
+        std::cout << "selected file: " << filePath << "\n";
+      }
+      ImGuiFileDialog::Instance()->Close();
+    }
+
     ImGui::Render();
 
     glClear(GL_COLOR_BUFFER_BIT);
