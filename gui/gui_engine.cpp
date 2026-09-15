@@ -1,5 +1,7 @@
 #include <SDL.h>
 #include <SDL_opengl.h>
+#include <iostream>
+#include <string>
 
 #include "imgui.h"
 #include "imgui_impl_opengl2.h"
