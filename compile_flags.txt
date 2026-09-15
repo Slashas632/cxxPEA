@@ -4,4 +4,5 @@
 -I./gui/theme
 -I./gui/imgui
 -I./gui/imgui/backends
+-I./gui/imgui_file_dialog
 -I/usr/include/SDL2
