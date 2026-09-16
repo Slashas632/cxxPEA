@@ -1,0 +1,4 @@
+leak:libEGL_nvidia.so
+leak:libGLX_nvidia.so
+leak:libnvidia-glcore.so
+leak:libSDL2
