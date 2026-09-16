@@ -34,4 +34,4 @@ debug:
 memory-leak-test:
 	$(CXX) $(CXXVERSION) -g -O1 -fsanitize=address,undefined -fno-omit-frame-pointer $(HEADERS) $(SRC) $(LDFFLAGS) -fsanitize=address,undefined -o $(TARGET)
 check-leaks: memory-leak-test
-	LSAN_OPTIONS=suppressions=.asan-suppressions ./$(TARGET)
+	ASAN_OPTIONS=detect_leaks=1:symbolize=1 LSAN_OPTIONS=suppressions=.asan-suppressions ./$(TARGET)
