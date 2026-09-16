@@ -31,3 +31,5 @@ clean:
 	rm -rf $(TARGET) imgui.ini
 debug:
 	$(CXX) $(CXXVERSION) -g -O0 -Wall -Wextra $(HEADERS) $(SRC) -o $(TARGET) $(LDFFLAGS)
+memory-leak-test:
+	$(CXX) $(CXXVERSION) -g -O1 -fsanitize=address,undefined -fno-omit-frame-pointer $(HEADERS) $(SRC) $(LDFFLAGS) -fsanitize=address,undefined -o $(TARGET)
