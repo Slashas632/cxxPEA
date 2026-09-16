@@ -5,21 +5,23 @@
 
 #include "ImGuiFileDialog.h"
 
-void filedialog_instance(settings_filedialog& settings) {
-  if (ImGuiFileDialog::Instance()->Display(settings.vKey)) {
+std::string filedialog_instance(settings_filedialog& settings) {
+  std::string selected_path;
+  if (ImGuiFileDialog::Instance()->Display(settings.vKey, ImGuiWindowFlags_NoCollapse, settings.window_minSize, settings.window_maxSize)) {
     if (ImGuiFileDialog::Instance()->IsOk()) {
-      std::string filePath = ImGuiFileDialog::Instance()->GetFilePathName();
+      std::string selected_path = ImGuiFileDialog::Instance()->GetFilePathName();
 
-      std::cout << "selected file: " << filePath << "\n";
+      std::cout << "selected file: " << selected_path << "\n";
     }
     ImGuiFileDialog::Instance()->Close();
   }
+  return selected_path;
 }
 
 void filedialog_button(settings_filedialog& settings) {
   if (ImGui::Button(settings.button_label.c_str())) {
     settings.config.path = ".";
-
+    settings.config.countSelectionMax = 1;
     ImGuiFileDialog::Instance()->OpenDialog(settings.vKey, settings.vTitle,
                                             settings.filters.c_str(),
                                             settings.config);
