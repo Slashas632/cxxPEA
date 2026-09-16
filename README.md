@@ -20,7 +20,7 @@
 
 
 ```
-cxxPEA
+ccxxPEA
 ├── compile_flags.txt
 ├── gui
 │   ├── gui_engine.cpp
@@ -52,6 +52,7 @@ cxxPEA
 │   ├── mainbar
 │   │   ├── mainbar.cpp
 │   │   └── mainbar.h
+│   ├── stb_image.h
 │   └── theme
 │       ├── theme.cpp
 │       └── theme.h
