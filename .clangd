@@ -4,18 +4,18 @@ Diagnostics:
     Add:
       - 'bugprone-*'
 
-      # Modernus C++
+      # Modern C++
       - 'modernize-use-nullptr'
       - 'modernize-use-auto'
       - 'modernize-loop-convert'
       - 'modernize-use-override'
 
-      # Performance check'as
+      # Performance check
       - 'performance-for-range-copy'
       - 'performance-avoid-endl'
       - 'performance-faster-string-find'
 
-      # Saugumo check'as
+      # Safety checks
       - 'clang-analyzer-security.*'
       - 'clang-analyzer-core.NullDereference'
 
