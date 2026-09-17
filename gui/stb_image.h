@@ -6524,7 +6524,7 @@ static void *stbi__pic_load(stbi__context *s,int *px,int *py,int *comp,int req_c
    // intermediate buffer is RGBA
    result = (stbi_uc *) stbi__malloc_mad3(x, y, 4, 0);
    if (!result) return stbi__errpuc("outofmem", "Out of memory");
-   memset(result, 0xff, x*y*4);
+   memset(result, 0xff, (size_t) x * (size_t) y * 4);
 
    if (!stbi__pic_load_core(s,x,y,comp, result)) {
       STBI_FREE(result);
