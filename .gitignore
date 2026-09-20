@@ -32,7 +32,7 @@ DerivedData/
 
 # Debugging
 *.dSYM/
-
+.gdb_history
 gui/imgui/examples/
 gui/imgui/docs/
 gui/imgui/** linguist-vendored
