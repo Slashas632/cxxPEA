@@ -5,7 +5,6 @@
 *.so
 *.dylib
 *.dll
-*.exe
 *.ini
 
 # Build directories
